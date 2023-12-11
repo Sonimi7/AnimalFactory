@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 public class NumberValidation {
 
     private int age = -1;
-    private NumberValidation numberValidation = new NumberValidation();
+    //private NumberValidation numberValidation = new NumberValidation();
 
     public boolean isNumber(String numberStr, Pattern pattern) {
         Matcher matcher = pattern.matcher(numberStr);

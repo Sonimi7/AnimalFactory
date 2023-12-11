@@ -15,14 +15,14 @@ public class AnimalsFactory {
     private ColorData colorData;
 
 
-    public AnimalsFactory(/*int age, String name, int weight, ColorData colorData*/) {
-//        this.name = name;
-//        this.age = age;
-//        this.weight = weight;
-//        this.colorData = colorData;
+    public AnimalsFactory(int age, String name, int weight, ColorData colorData) {
+        this.name = name;
+        this.age = age;
+        this.weight = weight;
+        this.colorData = colorData;
     }
 
-    public Animal create(AnimalsData animalsData, int age, String name, int weight, ColorData colorData) {
+    public Animal create(AnimalsData animalsData) {
         switch(animalsData) {
             case CAT:
                 return new Cat(age, name, weight, colorData);

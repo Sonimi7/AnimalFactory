@@ -16,7 +16,6 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         List<Animal> animalsList = new ArrayList<>();
 
-        AnimalsFactory animalsFactory = new AnimalsFactory(/*int age, String name, int weight, ColorData colorData*/);
         DataValidation commandValidation = new DataValidation();
         NumberValidation numberValidation = new NumberValidation();
 
@@ -63,7 +62,8 @@ public class Main {
                         continue;
                     }
 
-                    Animal animals = animalsFactory.create(AnimalsData.valueOf(animalsTypeStr), age, name, weight, ColorData.BLACK);
+                    AnimalsFactory animalsFactory = new AnimalsFactory(age, name, weight, ColorData.BLACK);
+                    Animal animals = animalsFactory.create(AnimalsData.valueOf(animalsTypeStr));
 
                     animalsList.add(animals);
 
