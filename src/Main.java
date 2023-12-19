@@ -24,12 +24,12 @@ public class Main {
             String commandStr = scanner.next();
 
             if (!commandValidation.isValidation(commandStr, CommandsData.values())) {
-                System.out.println("Вы ввели неверную команду");
+                System.out.println("Вы ввели неверную команду. Повторите ввод.");
                 continue;
             }
-        System.out.println("Good");
+        //System.out.println("Good");
 
-            CommandsData commandsData = CommandsData.valueOf(commandStr);
+            CommandsData commandsData = CommandsData.valueOf(commandStr.trim().toUpperCase());
 
             switch (commandsData) {
                 case ADD:
@@ -41,7 +41,7 @@ public class Main {
                         if (commandValidation.isValidation(animalsTypeStr, AnimalsData.values())) {
                             break;
                         }
-                        System.out.println("Вы ввели неверный тип животного");
+                        System.out.println("Вы ввели неверный тип животного. Повторите ввод.");
                     }
 
 
@@ -54,16 +54,18 @@ public class Main {
                     System.out.println("Введите вес животного");
                     int weight = scanner.nextInt();
 
+
                     System.out.println("Введите цвет животного: BLACK/BLUE/WHITE/RED");
-                    String animalColorStr = scanner.next();
+                    String animalColorStr = scanner.next().toUpperCase().trim();
 
                     if (!commandValidation.isValidation(animalColorStr, ColorData.values())) {
-                        System.out.println("Вы ввели неверный цвет животного");
+                        System.out.println("Вы ввели неверный цвет животного. Повторите ввод.");
                         continue;
                     }
 
                     AnimalsFactory animalsFactory = new AnimalsFactory(age, name, weight, ColorData.BLACK);
                     Animal animals = animalsFactory.create(AnimalsData.valueOf(animalsTypeStr));
+
 
                     animalsList.add(animals);
 
