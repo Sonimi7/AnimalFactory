@@ -110,10 +110,10 @@ public abstract class Animal {
             return "Возраст введен неверно";
         }
 
-        return String.format("Привет! меня зовут %s, мне %d $s, я вешу - $d кг, мой цвет - $s",
+        return String.format("Привет! меня зовут %s, мне %d %s, я вешу - %d кг, мой цвет - %s",
                 this.name,
                 this.age,
-                getCase,
+                getCase(),
                 this.weight,
                 this.color.getName()
         );

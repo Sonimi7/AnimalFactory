@@ -27,7 +27,6 @@ public class Main {
                 System.out.println("Вы ввели неверную команду. Повторите ввод.");
                 continue;
             }
-        //System.out.println("Good");
 
             CommandsData commandsData = CommandsData.valueOf(commandStr.trim().toUpperCase());
 
